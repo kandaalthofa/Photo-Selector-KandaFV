@@ -158,4 +158,4 @@ sudo systemctl restart nginx
   - **Solusi**:
     1. Hapus file `package-lock.json` dan folder `node_modules`.
     2. Jalankan `npm install` ulang di server/VPS agar npm mengunduh binary yang sesuai dengan environment hosting Anda.
-    3. `package.json` telah diperbarui dengan `"rollup": "^4.34.0"` dan `"overrides"` untuk memastikan kompatibilitas Rollup versi terbaru.
+    3. File `.npmrc` telah ditambahkan dengan `build-from-source=false` serta `package.json` yang dikonfigurasi dengan `optionalDependencies` (`@rollup/rollup-linux-x64-musl` & `@rollup/rollup-linux-x64-gnu`) untuk mendukung lingkungan musl dan glibc secara otomatis.
