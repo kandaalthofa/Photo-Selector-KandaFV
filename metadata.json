@@ -1,0 +1,6 @@
+{
+  "name": "Google Drive Photo Selector",
+  "description": "Konversi link Google Drive menjadi galeri preview foto interaktif, pilih foto favorit, dan salin daftar nama filenya secara instan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

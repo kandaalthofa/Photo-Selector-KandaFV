@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 200" width="100%" height="100%">
+  <!-- KANDAFV Premium Vector Logo - Crisp High Definition -->
+  <g fill="#FFFFFF">
+    <!-- Stylized K Logo Mark -->
+    <!-- Main Backslash Stem -->
+    <path d="M 30,20 L 175,175 L 125,175 L 5,38 L 5,20 Z" />
+    <!-- Top Right Diagonal Arm -->
+    <path d="M 85,90 L 175,20 L 132,20 L 50,90 Z" />
+    <!-- Bottom Left Accent Dot -->
+    <circle cx="28" cy="162" r="15" />
+
+    <!-- Text "KANDA" - Ultra Bold Sans -->
+    <text x="210" y="142" font-family="'Plus Jakarta Sans', 'Inter', 'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="118" letter-spacing="4">KANDA</text>
+    
+    <!-- Text "FV" - Elegant Thin Sans -->
+    <text x="675" y="142" font-family="'Plus Jakarta Sans', 'Inter', 'Montserrat', 'Helvetica', sans-serif" font-weight="200" font-size="118" letter-spacing="2">FV</text>
+    
+    <!-- Registered Symbol ® -->
+    <g transform="translate(860, 95)">
+      <circle cx="0" cy="0" r="16" fill="none" stroke="#FFFFFF" stroke-width="3" />
+      <text x="0" y="6" font-family="sans-serif" font-weight="800" font-size="18" text-anchor="middle">R</text>
+    </g>
+  </g>
+</svg>
