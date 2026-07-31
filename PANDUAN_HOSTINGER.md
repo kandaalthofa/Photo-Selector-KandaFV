@@ -152,3 +152,10 @@ sudo systemctl restart nginx
 
 - **Problem: Gambar thumbnail tidak muncul (broken image).**
   - **Solusi**: Endpoint `/api/proxy-image` membutuhkan akses internet dari server ke Google Drive. Pastikan server Hostinger Anda tidak memblokir outgoing HTTPS request ke `drive.google.com` & `googleusercontent.com`.
+
+- **Problem: Error GLIBC / Rollup incompatibility (`@rollup/rollup-linux-x64-gnu` requires GLIBC 2.29).**
+  - **Penyebab**: Server hosting memiliki versi sistem GLIBC yang lebih lama dibanding binary Rollup native default.
+  - **Solusi**:
+    1. Hapus file `package-lock.json` dan folder `node_modules`.
+    2. Jalankan `npm install` ulang di server/VPS agar npm mengunduh binary yang sesuai dengan environment hosting Anda.
+    3. `package.json` telah diperbarui dengan `"rollup": "^4.34.0"` dan `"overrides"` untuk memastikan kompatibilitas Rollup versi terbaru.
