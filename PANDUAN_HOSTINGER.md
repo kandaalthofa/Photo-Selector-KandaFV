@@ -142,5 +142,13 @@ sudo systemctl restart nginx
   - **Penyebab**: Folder Google Drive belum diatur menjadi Publik.
   - **Solusi**: Di Google Drive, klik kanan folder > **Bagikan (Share)** > ubah Akses Umum menjadi **"Siapa saja yang memiliki link" (Anyone with the link)**.
 
+- **Problem: Deployment failed - missing critical configuration files: package.json is null/empty.**
+  - **Penyebab**: File `package.json` tidak berada di root folder lokasi deployment (misalnya file terekstrak ke dalam subfolder seperti `kandafv-main/package.json` atau tidak ikut terunggah ke Hostinger File Manager/Git).
+  - **Solusi**:
+    1. Pastikan seluruh isi project (termasuk `package.json`, `vite.config.ts`, `server.ts`, folder `src/`) berada langsung di root **`public_html`** (atau root Application Folder Node.js Anda), **bukan** di dalam folder bersarang (subfolder).
+    2. Pastikan file `package.json` yang diunggah valid dan memiliki struktur dependencies lengkap (sudah kami perbarui dengan nama `kandafv-photo-selector`).
+    3. Jika Anda menggunakan fitur **Hostinger Web Hosting (Node.js App Manager)**: Masuk ke **Node.js** di hPanel -> atur **Application Root** tepat ke lokasi `package.json` berada -> jalankan `npm install`.
+    4. Jika Anda hanya ingin deploy static HTML (tanpa backend proxy): Anda dapat melakukan `npm run build` di lokal komputer Anda terlebih dahulu, lalu upload isi folder `dist/` ke `public_html`. (Catatan: Untuk fitur pratinjau & download foto Google Drive, disarankan menggunakan metode Node.js App / VPS).
+
 - **Problem: Gambar thumbnail tidak muncul (broken image).**
   - **Solusi**: Endpoint `/api/proxy-image` membutuhkan akses internet dari server ke Google Drive. Pastikan server Hostinger Anda tidak memblokir outgoing HTTPS request ke `drive.google.com` & `googleusercontent.com`.
